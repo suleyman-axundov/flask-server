@@ -1,7 +1,9 @@
 from flask import Flask, request
+from flask_cors import CORS
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def home():
@@ -13,7 +15,6 @@ def submit():
     telefon = request.form.get('telefon')
     mesaj = request.form.get('mesaj')
 
-    # Mesajları fayla yazırıq
     with open('messages.txt', 'a', encoding='utf-8') as f:
         f.write(f"Ad: {ad}\nTelefon: {telefon}\nMesaj: {mesaj}\n\n")
 
