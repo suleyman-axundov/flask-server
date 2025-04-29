@@ -1,15 +1,14 @@
 from flask import Flask, request
 from flask_cors import CORS
-from flask_talisman import Talisman  # Əlavə etdik
+from flask_talisman import Talisman
 import smtplib
 from email.mime.text import MIMEText
 import os
 
 app = Flask(__name__)
 CORS(app)
-Talisman(app)  # HTTPS yönləndirmə və təhlükəsizlik başlıqları
+Talisman(app)
 
-# Gmail hesab məlumatları
 GMAIL_USER = 'suleyman.axundov2004@gmail.com'
 GMAIL_PASSWORD = 'ldvdfdkbubkffzty'
 
